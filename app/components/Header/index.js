@@ -1,27 +1,32 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
-import A from './A';
-import Img from './Img';
-import NavBar from './NavBar';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+
 import HeaderLink from './HeaderLink';
-import Banner from './banner.jpg';
-import messages from './messages';
 
 function Header() {
   return (
     <div>
-      <A href="https://www.reactboilerplate.com/">
-        <Img src={Banner} alt="react-boilerplate - Logo" />
-      </A>
-      <NavBar>
-        <HeaderLink to="/">
-          <FormattedMessage {...messages.home} />
-        </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
-        </HeaderLink>
-      </NavBar>
+      <AppBar
+        position="absolute"
+        style={{ background: 'white', color: 'black' }}
+      >
+        <Toolbar>
+          <HeaderLink to="/">
+            <p>Home</p>
+          </HeaderLink>
+          <HeaderLink to="/product">
+            <p>Product</p>
+          </HeaderLink>
+          <HeaderLink to="/about">
+            <p>About</p>
+          </HeaderLink>
+          <HeaderLink to="/portfolio">
+            <p>Portfolio</p>
+          </HeaderLink>
+        </Toolbar>
+      </AppBar>
     </div>
   );
 }
