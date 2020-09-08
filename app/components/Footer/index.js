@@ -1,11 +1,11 @@
 import React from 'react';
-import Wrapper from './Wrapper';
+import { FooterSection, FooterDesk } from './footerStyle';
 
 function Footer() {
   return (
-    <Wrapper>
-      <section />
-    </Wrapper>
+    <FooterSection>
+      <FooterDesk>Copiright &copy; 2020 </FooterDesk>
+    </FooterSection>
   );
 }
 

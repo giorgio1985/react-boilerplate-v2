@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.footer`
-  display: flex;
+  display: block;
   justify-content: space-between;
-  padding: 3em 0;
+   bottom: 3em 0em 
   border-top: 1px solid #666;
+  text-align: center;
 `;
 
 export default Wrapper;

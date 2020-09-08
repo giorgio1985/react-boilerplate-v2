@@ -5,7 +5,8 @@
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.HomePage';
+// export const scope = 'boilerplate.containers.HomePage';
+export const scope = 'boilerplate.components.Header';
 
 export default defineMessages({
   startProjectHeader: {
@@ -28,5 +29,9 @@ export default defineMessages({
   trymeAtPrefix: {
     id: `${scope}.tryme.atPrefix`,
     defaultMessage: '@',
+  },
+  home: {
+    id: `${scope}.home`,
+    defaultMessage: 'ops!',
   },
 });
