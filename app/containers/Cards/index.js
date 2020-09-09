@@ -29,6 +29,7 @@ import moon from '../../images/moon.jpg';
 import saga from './saga';
 import reducer from './reducer';
 import makeSelectCards from './selectors';
+import mockCards from './mock';
 
 const useStyles = makeStyles({
   root: {
@@ -45,9 +46,10 @@ export function Cards() {
   useInjectReducer({ key: 'cards', reducer });
   useInjectSaga({ key: 'cards', saga });
 
+  console.log(mockCards);
+
   return (
     <div>
-      {/* <FormattedMessage {...messages.header} /> */}
       <div className="mdc-card">
         <Card className={classes.root} variant="outlined">
           <CardActionArea>
@@ -58,20 +60,16 @@ export function Cards() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Lizard
+                Card
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                Questo &apos; il mio commento!
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
             <Button size="small" color="primary">
-              Share
-            </Button>
-            <Button size="small" color="primary">
-              Learn More
+              Link
             </Button>
           </CardActions>
         </Card>
