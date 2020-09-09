@@ -1,0 +1,24 @@
+const mockCards = {
+  data: [
+    {
+      id: 1,
+      commento: 'Questo è il primo commento',
+      link: 'http://localhost:3000/product',
+      image: '../../images/moustache.jpg',
+    },
+    {
+      id: 2,
+      commento: 'Questo è il primo commento',
+      link: 'http://localhost:3000/product',
+      image: '../../images/moustache.jpg',
+    },
+    {
+      id: 3,
+      commento: 'Questo è il primo commento',
+      link: 'http://localhost:3000/product',
+      image: '../../images/moustache.jpg',
+    },
+  ],
+};
+
+export default mockCards;

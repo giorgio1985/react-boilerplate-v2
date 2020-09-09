@@ -50,13 +50,9 @@
     "IE 10"
   ],
   "lint-staged": {
-    "*.js": [
-      "npm run lint:eslint:fix",
-      "git add --force"
-    ],
-    "*.json": [
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
-      "git add --force"
+      "git add"
     ]
   },
   "pre-commit": "lint:staged",

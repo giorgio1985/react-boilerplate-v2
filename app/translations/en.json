@@ -3,11 +3,22 @@
   "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
   "boilerplate.components.Header.features": "Features",
   "boilerplate.components.Header.home": "Home",
-  "boilerplate.components.TemplateHeader.header": "Prodotti",
-  "boilerplate.components.TemplateHeader.about": "About",
-  "boilerplate.components.TemplateHeader.portfolio": "Portfolio",
-  "boilerplate.components.TemplateHeader.team": "team",
-  "boilerplate.components.TemplateHeader.contact": "Contatti",
+
+  "boilerplate.container.Contact.contact": "Contatti",
+  "boilerplate.container.Contact.underTitle": "Sotto titolo - Contatti",
+
+  "boilerplate.containers.Product.product": "Prodotti",
+  "boilerplate.containers.Product.underTitle": "Sotto titolo - Prodotti",
+
+  "boilerplate.containers.About.about": "About",
+  "boilerplate.containers.About.underTitle": "Sotto titolo - About",
+
+  "boilerplate.container.Portfolio.portfolio": "Portfolio",
+  "boilerplate.container.Portfolio.underTitle": "Sotto titolo - Portfolio",
+
+  "boilerplate.container.Team.team": "team",
+  "boilerplate.container.Team.underTitle": "Sotto titolo - Team",
+
   "boilerplate.containers.FeaturePage.css.header": "Features",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",

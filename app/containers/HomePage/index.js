@@ -32,7 +32,8 @@ import Section from './Section';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import Cards from '../Cards/Loadable';
+// import Cards from '../Cards/Loadable';
+import Cards from '../../components/Card';
 
 const key = 'home';
 

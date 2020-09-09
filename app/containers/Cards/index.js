@@ -46,8 +46,6 @@ export function Cards() {
   useInjectReducer({ key: 'cards', reducer });
   useInjectSaga({ key: 'cards', saga });
 
-  console.log(mockCards);
-
   return (
     <div>
       <div className="mdc-card">

@@ -14,7 +14,13 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import TemplateHeader from 'components/TemplateHeader';
+import About from 'containers/About/Loadable';
+import Contact from 'containers/Contact/Loadable';
+import Portfolio from 'containers/Portfolio/Loadable';
+import Product from 'containers/Product/Loadable';
+import Team from 'containers/Team/Loadable';
+
+// import TemplateHeader from 'components/TemplateHeader';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
@@ -43,11 +49,11 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
-        <Route path="/product" component={TemplateHeader} />
-        <Route path="/about" component={TemplateHeader} />
-        <Route path="/portfolio" component={TemplateHeader} />
-        <Route path="/team" component={TemplateHeader} />
-        <Route path="/contact" component={TemplateHeader} />
+        <Route path="/product" component={Product} />
+        <Route path="/about" component={About} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/team" component={Team} />
+        <Route path="/contact" component={Contact} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />
