@@ -15,54 +15,57 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { render } from 'react-testing-library';
-import moon from '../../images/moon.jpg';
-import mock from './mock.json';
+import mockCards from './mock';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 400,
+    maxWidth: '100%',
   },
   media: {
-    height: 100,
+    height: 200,
   },
 });
 function Cards() {
   const classes = useStyles();
-  const mockData = mock.map((item, index) => {
-    render(
+  console.log('root', classes.root);
+  console.log('lunghezza array', mockCards.length);
+ 
+   const renderCard = (card, index) => {
+    console.log('image', card.image);
+    return( 
       <div>
-        <div className="mdc-card">
-          <Card className={classes.root} variant="outlined" key={index.id}>
-            <CardActionArea>
+        <div className="mdc-card" >
+          <Card className={classes.root} variant="outlined" >
+            <CardActionArea> 
               <CardMedia
                 className={classes.media}
-                image={moon}
-                title="Contemplative Reptile"
+                image = { require(`../../images/${card.image}`) }
+                title={card.id}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Cards
+               <li key={index}>Cards: {card.id}   </li>  
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                 {item.commento}
+               <li key ={index}> comment: {card.commento}</li>  
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Links
+               <li key={index}> Links: {card.link}</li>
               </Button>
             </CardActions>
-          </Card>
+          </Card><hr/>
         </div>
-      </div>,
+      </div>
     );
-  });
+      
+ }
+return <div className="Cards">{mockCards.map(renderCard)}</div>
 
-  return <div>{mockData}</div>;
-}
+};
 
 Cards.propTypes = {};
 
-export default Cards;
+export default Cards; 

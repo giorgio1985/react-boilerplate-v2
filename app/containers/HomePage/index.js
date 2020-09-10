@@ -23,6 +23,7 @@ import H3 from 'components/H3';
 import ReposList from 'components/ReposList';
 import { FormattedMessage } from 'react-intl';
 import Grid from '@material-ui/core/Grid';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import messages from './messages';
@@ -34,18 +35,22 @@ import reducer from './reducer';
 import saga from './saga';
 // import Cards from '../Cards/Loadable';
 import Cards from '../../components/Card';
+import '../HomePage/home.css';
 
 const key = 'home';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 2,
+    width: '100%',
+    marginLeft: 'auto'
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(5),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+ 
 }));
 
 export function HomePage({
@@ -85,22 +90,20 @@ export function HomePage({
           <FormattedMessage {...messages.home} />
         </H1>
         <H3>Sotto titolo - Home page</H3>
+        
+         <table border="1px solid black" className="centeredTable" >
+           <tbody>
+           <tr><td>
         <div className={classes.root}>
-          <Grid container spacing={3}>
-            <Grid item xs={4}>
-              <Paper className={classes.paper} />
-              <Cards />
-            </Grid>
-            <Grid item xs={4}>
-              <Paper className={classes.paper} />
-              <Cards />
-            </Grid>
-            <Grid item xs={4}>
+          <Grid container spacing={10}>
+            <Grid item xs={12}>
               <Paper className={classes.paper} />
               <Cards />
             </Grid>
           </Grid>
-        </div>
+        </div></td></tr>
+        </tbody>
+        </table>
       </div>
     </article>
   );
