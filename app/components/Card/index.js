@@ -5,8 +5,6 @@
  */
 
 import React from 'react';
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -30,34 +28,35 @@ function Cards() {
   console.log('root', classes.root);
   console.log('lunghezza array', mockCards.length);
  
-   const renderCard = (card, index) => {
-    console.log('image', card.image);
+   const renderCard = (item) => {
+    console.log('image', item.image);
+    console.log('card id', item.id);
     return( 
       <div>
-        <div className="mdc-card" >
-          <Card className={classes.root} variant="outlined" >
+       
+          <Card className={classes.root} key={item.id}>
             <CardActionArea> 
               <CardMedia
                 className={classes.media}
-                image = { require(`../../images/${card.image}`) }
-                title={card.id}
+                image = { require(`../../images/${item.image}`) }
+                title={item.id}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-               <li key={index}>Cards: {card.id}   </li>  
+                <Typography gutterBottom variant="h6" component="h2">
+                Cards: {item.id}   
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-               <li key ={index}> comment: {card.commento}</li>  
+               commento: {item.commento} 
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-               <li key={index}> Links: {card.link}</li>
+                Links: {item.link}
               </Button>
             </CardActions>
           </Card><hr/>
-        </div>
+        
       </div>
     );
       

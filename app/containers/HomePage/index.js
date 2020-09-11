@@ -36,17 +36,19 @@ import saga from './saga';
 // import Cards from '../Cards/Loadable';
 import Cards from '../../components/Card';
 import '../HomePage/home.css';
+import Container from '@material-ui/core/Container';
+
 
 const key = 'home';
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 2,
-    width: '100%',
-    marginLeft: 'auto'
+    width: '50%',
+    margin: 'auto',
   },
   paper: {
-    padding: theme.spacing(5),
+    padding: theme.spacing(0),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -77,35 +79,33 @@ export function HomePage({
   };
   const classes = useStyles();
   return (
-    <article>
+    <Container>
       <Helmet>
         <title>Home Page</title>
         <meta name="description" content="A React.js Boilerplate v2" />
       </Helmet>
-      <div>
-        <Section>
-          <ReposList {...reposListProps} />
-        </Section>
         <H1>
           <FormattedMessage {...messages.home} />
         </H1>
-        <H3>Sotto titolo - Home page</H3>
+        <div>
+          <H3>
+             <FormattedMessage {...messages.underTitle} />
+          </H3>
+        </div>  
+
         
-         <table border="1px solid black" className="centeredTable" >
-           <tbody>
-           <tr><td>
+        
+
         <div className={classes.root}>
-          <Grid container spacing={10}>
-            <Grid item xs={12}>
+{/*          <Grid container spacing={0}>
+            <Grid item sm={3}>*/}
               <Paper className={classes.paper} />
               <Cards />
-            </Grid>
-          </Grid>
-        </div></td></tr>
-        </tbody>
-        </table>
-      </div>
-    </article>
+{/*            </Grid>
+          </Grid>*/}
+        </div>
+      </Container>
+    
   );
 }
 
