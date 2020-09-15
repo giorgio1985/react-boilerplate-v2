@@ -22,19 +22,15 @@ import H1 from 'components/H1';
 import H3 from 'components/H3';
 //import ReposList from 'components/ReposList';
 import { FormattedMessage } from 'react-intl';
-//import Grid from '@material-ui/core/Grid';
 import messages from './messages';
-// import CenteredSection from './CenteredSection';
-//import Section from './Section';
-// import { loadRepos } from '../App/actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-// import Cards from '../Cards/Loadable';
 import Cards from '../../components/Card';
 import '../HomePage/home.css';
 import Container from '@material-ui/core/Container';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Grid } from '@material-ui/core';
+import '../../components/Card/card.css';
 
 
 
@@ -77,7 +73,13 @@ export function HomePage({
              <FormattedMessage {...messages.underTitle} />
           </H3>
         </div> 
-          <Cards />
+        <Grid container>
+          <Grid item xs={12}>
+            <Cards />
+          </Grid>
+            
+        </Grid>
+          
       </Container>
     
   );
