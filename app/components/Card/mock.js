@@ -24,6 +24,12 @@ const mockCards = [
     link: 'http://localhost:3000/product/4',
     image: 'moustache.png',
   },
+  {
+    id: 5,
+    commento: 'Questo è il quinto commento',
+    link: 'http://localhost:3000/product/5',
+    image: 'icon.png',
+  },
 ]
 
 

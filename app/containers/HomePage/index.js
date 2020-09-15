@@ -20,15 +20,12 @@ import {
 } from 'containers/App/selectors';
 import H1 from 'components/H1';
 import H3 from 'components/H3';
-import ReposList from 'components/ReposList';
+//import ReposList from 'components/ReposList';
 import { FormattedMessage } from 'react-intl';
-import Grid from '@material-ui/core/Grid';
-
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+//import Grid from '@material-ui/core/Grid';
 import messages from './messages';
 // import CenteredSection from './CenteredSection';
-import Section from './Section';
+//import Section from './Section';
 // import { loadRepos } from '../App/actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
@@ -37,23 +34,11 @@ import saga from './saga';
 import Cards from '../../components/Card';
 import '../HomePage/home.css';
 import Container from '@material-ui/core/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const key = 'home';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 2,
-    width: '50%',
-    margin: 'auto',
-  },
-  paper: {
-    padding: theme.spacing(0),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
- 
-}));
 
 export function HomePage({
   username,
@@ -77,7 +62,7 @@ export function HomePage({
     error,
     repos,
   };
-  const classes = useStyles();
+
   return (
     <Container>
       <Helmet>
@@ -91,19 +76,8 @@ export function HomePage({
           <H3>
              <FormattedMessage {...messages.underTitle} />
           </H3>
-        </div>  
-
-        
-        
-
-        <div className={classes.root}>
-{/*          <Grid container spacing={0}>
-            <Grid item sm={3}>*/}
-              <Paper className={classes.paper} />
-              <Cards />
-{/*            </Grid>
-          </Grid>*/}
-        </div>
+        </div> 
+          <Cards />
       </Container>
     
   );
