@@ -26,10 +26,11 @@ export function Contact() {
 
   return (
     <div>
+      <div id="underTitle">
       <H1>
         <FormattedMessage {...messages.contact} />
       </H1>
-      <div id="underTitle">
+      
         <H3>
           <FormattedMessage {...messages.underTitle} />
         </H3>

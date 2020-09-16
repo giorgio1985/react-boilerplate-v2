@@ -55,7 +55,7 @@ export default function App() {
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/team" component={Team} />
         <Route path="/contact" component={Contact} />
-        <Route path="/card/:id" component={FirstCard} />
+        <Route path="/card/1" component={FirstCard} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

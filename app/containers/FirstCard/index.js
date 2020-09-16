@@ -17,6 +17,8 @@ import makeSelectFirstCard from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
+import H1 from '../../components/H1';
+import H3 from '../../components/H3';
 
 export function FirstCard() {
   useInjectReducer({ key: 'firstCard', reducer });
@@ -24,9 +26,19 @@ export function FirstCard() {
 
   return (
     <div>
-      <FormattedMessage {...messages.header} />
+      <div id="underTitle">
+      <H1>
+        <FormattedMessage {...messages.firstCard} />
+      </H1>
       
+        <H3>
+          <FormattedMessage {...messages.underTitle} />
+        </H3>
+      </div>
+ 
+
     </div>
+    
   );
 }
 

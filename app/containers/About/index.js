@@ -20,16 +20,18 @@ import messages from './messages';
 import H1 from '../../components/H1';
 import H3 from '../../components/H3';
 
+
 export function About() {
   useInjectReducer({ key: 'about', reducer });
   useInjectSaga({ key: 'about', saga });
 
   return (
     <div>
+      <div id="underTitle">
       <H1>
         <FormattedMessage {...messages.about} />
       </H1>
-      <div id="underTitle">
+      
         <H3>
           <FormattedMessage {...messages.underTitle} />
         </H3>

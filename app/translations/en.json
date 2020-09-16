@@ -21,6 +21,9 @@
   "boilerplate.container.Team.team": "team",
   "boilerplate.container.Team.underTitle": "Sotto titolo - Team",
 
+  "boilerplate.containers.FirstCard.firstCard": "First Card",
+  "boilerplate.containers.FirstCard.underTitle": "Sotto titolo - First Card",
+
   "boilerplate.containers.FeaturePage.css.header": "Features",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",

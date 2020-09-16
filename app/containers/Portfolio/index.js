@@ -25,11 +25,12 @@ export function Portfolio() {
   useInjectSaga({ key: 'portfolio', saga });
 
   return (
-    <div>
+    <div>  
+      <div id="underTitle">
       <H1>
         <FormattedMessage {...messages.portfolio} />
       </H1>
-      <div id="underTitle">
+
         <H3>
           <FormattedMessage {...messages.underTitle} />
         </H3>
