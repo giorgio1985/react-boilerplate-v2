@@ -4,13 +4,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import HeaderLink from './HeaderLink';
+import HeaderLinkStyle from '../../components/HeaderLinkStyle';
 import moustache from '../../images/moustache.png';
 
 function Header() {
   return (
     <div>
       <AppBar
-        position="absolute"
+        position="fixed"
         style={{ background: 'white', color: 'black' }}
       >
         <Toolbar>
@@ -22,7 +23,7 @@ function Header() {
               alt="Main logo"
             />
           </div>
-
+          <HeaderLinkStyle>
           <HeaderLink to="/">
             <p>Home</p>
           </HeaderLink>
@@ -41,6 +42,7 @@ function Header() {
           <HeaderLink to="/contact">
             <p>Contact</p>
           </HeaderLink>
+          </HeaderLinkStyle>
         </Toolbar>
       </AppBar>
     </div>

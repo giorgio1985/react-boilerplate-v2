@@ -19,6 +19,7 @@ import Contact from 'containers/Contact/Loadable';
 import Portfolio from 'containers/Portfolio/Loadable';
 import Product from 'containers/Product/Loadable';
 import Team from 'containers/Team/Loadable';
+import FirstCard from 'containers/FirstCard/Loadable';
 
 // import TemplateHeader from 'components/TemplateHeader';
 import Header from 'components/Header';
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="/portfolio" component={Portfolio} />
         <Route path="/team" component={Team} />
         <Route path="/contact" component={Contact} />
+        <Route path="/card/:id" component={FirstCard} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

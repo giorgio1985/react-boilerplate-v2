@@ -61,6 +61,7 @@ export function HomePage({
 
   return (
     <Container>
+      <div className="container">
       <Helmet>
         <title>Home Page</title>
         <meta name="description" content="A React.js Boilerplate v2" />
@@ -79,7 +80,7 @@ export function HomePage({
           </Grid>
             
         </Grid>
-          
+          </div>
       </Container>
     
   );

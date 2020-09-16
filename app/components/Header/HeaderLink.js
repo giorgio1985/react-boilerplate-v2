@@ -5,6 +5,7 @@ export default styled(Link)`
   color: black;
   padding: 0.8em;
   margin: 0.2em;
+  float: left;
   padding-top: 0em;
   text-decoration: none;
   font-weight: bold;
@@ -17,11 +18,12 @@ export default styled(Link)`
     background: grey;
     color: white;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding-right: 0;
     padding-left: 0;
-    font-size: 50%;
-    width: 100%;
+    font-size: 100%;
+    width: 70%;
+    height:40px;
     text-align: center;
     border-right: none;
     display: flex-direction;
