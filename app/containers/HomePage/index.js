@@ -20,18 +20,17 @@ import {
 } from 'containers/App/selectors';
 import H1 from 'components/H1';
 import H3 from 'components/H3';
-//import ReposList from 'components/ReposList';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import Cards from '../../components/Card';
+import Article from '../../components/Card';
 import '../HomePage/home.css';
 import Container from '@material-ui/core/Container';
-import { Grid } from '@material-ui/core';
+import  Grid  from '@material-ui/core/Grid';
 import '../../components/Card/card.css';
-
+import mockCards from '../../components/Card/mock';
 
 
 const key = 'home';
@@ -74,11 +73,22 @@ export function HomePage({
              <FormattedMessage {...messages.underTitle} />
           </H3>
         </div> 
-        <Grid container>
-          <Grid item xs={12}>
-            <Cards />
-          </Grid>
+        <Grid container >
+       
+          {mockCards.map(renderCard=>{ 
+          console.log('renderCard', renderCard);
+          return( 
             
+            <Grid item xs={12} sm={4} key={renderCard.id}>
+              <Article 
+                id={renderCard.id} 
+                commento={renderCard.commento }
+                link={renderCard.link}   
+                image = { require(`../../images/${renderCard.image}`) }  
+              />
+             
+            </Grid> 
+      )    })}
         </Grid>
           </div>
       </Container>
