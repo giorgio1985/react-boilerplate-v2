@@ -59,13 +59,14 @@ class Header extends React.Component {
   
   theListener = () => {
     //alert('Ampiezza schermo: ' + innerWidth +' X ' + innerHeight);
-
+    
     this.newWidth = innerWidth;
     this.newHeight =innerHeight;
 
     this.setState({ width: this.newWidth, height: this.newHeight });
-
+ 
     this.getScreen();
+     document.getElementById('titleFlag').innerHTML = '';
     document.getElementById('flag').style.display = 'block';
     document.getElementById('iconButton').style.display = 'none';
 
@@ -92,10 +93,12 @@ class Header extends React.Component {
       console.log('schermo modalita mobile!');
       document.getElementById('flag').style.display = 'none';
       document.getElementById('iconButton').style.display = 'block';
+      document.getElementById('titleFlag').innerHTML = 'Titolo';
   } else if(this.newWidth >= 968 || this.newHeight >= 700) {
     console.log('schermo modalita desktop!');
     document.getElementById('flag').style.display = 'block';
     document.getElementById('iconButton').style.display = 'none';
+    document.getElementById('titleFlag').innerHTML = '';
   }
 }
 
@@ -147,12 +150,17 @@ render() {
           </HeaderLink>
           
           </HeaderLinkStyle>
+          
+           <div id="titleFlag" style={{ marginLeft: '30%'}}> </div> 
+          
+          <IconButton aria-label="app" onClick={this.theListener} style={{ marginLeft: '40%' }} id="iconButton">
+          <Menu/>
+        </IconButton> 
 
         </Toolbar>
-        <IconButton aria-label="app" onClick={this.theListener} id="iconButton">
-          <Menu/>
-        </IconButton>
-      </AppBar>
+
+      </AppBar>     
+
     </div>
 
     
