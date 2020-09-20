@@ -7,7 +7,7 @@
 import styled from 'styled-components';
 
 const HeaderLinkStyle = styled.div`
-margin-left: 15%;
+margin-left: 10%;
 `
 HeaderLinkStyle.propTypes = {};
 

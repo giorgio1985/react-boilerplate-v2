@@ -11,10 +11,11 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
-import Typography from '@material-ui/core/Typography';*/
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth'*/
+import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton'; 
 import Menu from '@material-ui/icons/Menu';
+import '../Header/header.css';
 import { render } from 'react-dom';
 
 
@@ -150,10 +151,10 @@ render() {
           </HeaderLink>
           
           </HeaderLinkStyle>
+          <Typography id="titleFlag" style={{ marginLeft: '45%'}}> </Typography>
+           
           
-           <div id="titleFlag" style={{ marginLeft: '30%'}}> </div> 
-          
-          <IconButton aria-label="app" onClick={this.theListener} style={{ marginLeft: '40%' }} id="iconButton">
+          <IconButton aria-label="app" onClick={this.theListener} style={{ marginLeft: '35%' }} id="iconButton">
           <Menu/>
         </IconButton> 
 
