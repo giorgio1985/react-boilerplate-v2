@@ -20,110 +20,58 @@ import '../Header/header.css';
 import { render } from 'react-dom';
 
 
-
-
 class Header extends React.Component {
 
   constructor(props) {
    super(props);
     this.state = {
+    isMenuOpen: true,
+    iconButton: 'iconButton',
+    closeIcon: 'closeIcon',
+    flag: '',
     width: 0,
     height: 0
+    
     };
   }
   
-   newWidth;
-   newHeight;
-
   componentDidMount() {
-    this.resizeListener();
-    this.getScreen();
-    //this.hideMenu();
+  this.getInitialMenu();
   }
 
-  resizeListener = () => {
-    window.addEventListener('resize', this.theScreenListener);
-    window.addEventListener('click', this.theListener);
-    window.addEventListener('load', this.loadListener);
-  }
-
-  hideMenu =() => {
-    window.addEventListener('click', this.closeListener);
-    
-  }
-   
-   closeListener = () => {
-
-      document.getElementById('flag').style.display = 'none'; 
-      document.getElementById('closeIcon').style.display = 'none';
-      document.getElementById('iconButton').style.display = 'block';
-      document.getElementById('titleFlag').innerHTML = 'Titolo';  
-    // this.getScreen();
-      console.log('close listener');
+  getInitialMenu = () => {
+   console.log('initial width: ', window.screen.width);
+   console.log('inital height: ', window.screen.height);
+    if(window.screen.width > 750 && this.state.iconButton === 'iconButton') {
+   this.setState({ iconButton: 'removeIcon', closeIcon: 'closeIcon'});
+    console.log('iconButton:', this.state.iconButton);
+    console.log('closeIcon:', this.state.closeIcon);
+  }  
+ else {
+    console.log('errore stato');
       }
-
-  theScreenListener = () => {
-  
-    this.newWidth = innerWidth;
-    this.newHeight =innerHeight;
-
-    this.setState({ width: this.newWidth, height: this.newHeight });
-
-    this.getScreen();
-
-    console.log('new width state :->', this.state.width);
-    console.log('new height state:->', this.state.height);
-  }
-  
-  theListener = () => {
-    //alert('Ampiezza schermo: ' + innerWidth +' X ' + innerHeight);
-    
-    this.newWidth = innerWidth;
-    this.newHeight =innerHeight;
-
-    this.setState({ width: this.newWidth, height: this.newHeight });
- 
-    this.getScreen();
-     document.getElementById('titleFlag').innerHTML = '';
-    document.getElementById('flag').style.display = 'block';
-    document.getElementById('iconButton').style.display = 'none';
-    document.getElementById('closeIcon').style.display = 'block';
-
-    console.log('new width state:-->', this.state.width);
-    console.log('new height state:-->', this.state.height);
   }
 
-  loadListener = () => {
-    
-    this.newWidth = innerWidth;
-    this.newHeight =innerHeight;
-
-    this.setState({ width: this.newWidth, height: this.newHeight });
-
-    this.getScreen();
-
-    console.log('new width state:--->', this.state.width);
-    console.log('new height state:--->', this.state.height);
+  hideMenu = () =>{
+   console.log('hideMenu function');
+   if(this.state.isMenuOpen === true) {
+     console.log('is menu open?: ', this.state.isMenuOpen);
+     this.setState({isMenuOpen: false, flag: 'removeMenu', iconButton: 'addButton', closeIcon: 'removeIcon'});
+   } else if(this.state.isMenuOpen === false) {
+     console.log('is menu open? :', this.state.isMenuOpen);
+     console.log('iconButton? :', this.state.iconButton);
+     this.setState({isMenuOpen: true, flag: 'addMenu', iconButton: 'removeButton'})
+     
+   }
   }
 
+  showMenu = () => {
+    console.log('show function', this.state.flag);
+    if(this.state.flag === 'removeMenu') {
+      this.setState({flag: 'addMenu', closeIcon: 'addIcon', iconButton: 'removeButton' });
+    }
 
-
-  getScreen = () => {
-    if(this.newWidth < 1000 || this.newHeight < 722) {
-      console.log('schermo modalita mobile!'); //non serve.... ma farlo tramite css
-      document.getElementById('flag').style.display = 'none';
-      document.getElementById('iconButton').style.display = 'block';
-      document.getElementById('closeIcon').style.display = 'none';
-      document.getElementById('titleFlag').innerHTML = 'Titolo';
-  } else if(this.newWidth >= 1000 || this.newHeight >= 722) {
-    console.log('schermo modalita desktop!');
-    document.getElementById('flag').style.display = 'block';
-    document.getElementById('iconButton').style.display = 'none';
-    document.getElementById('closeIcon').style.display = 'none';
-    document.getElementById('titleFlag').innerHTML = '';
   }
-}
-
 
 render() {
   return (
@@ -132,7 +80,7 @@ render() {
         position="sticky"
         style={{ background: 'white', color: 'black' }}
       >
-        <Toolbar>
+        <Toolbar>  {/* da gestire tramite css */}
           <div className="myLogo">
             <img
               src={moustache}
@@ -141,7 +89,7 @@ render() {
               alt="Main logo"
             />
           </div>
-          <HeaderLinkStyle id="flag">
+          <HeaderLinkStyle id={this.state.flag}>
 
           <HeaderLink to="/">
             <p>Home</p>
@@ -173,14 +121,14 @@ render() {
           </HeaderLink>
           
           </HeaderLinkStyle>
-          <Typography id="titleFlag" style={{ marginLeft: '45%'}}> </Typography>
+          <Typography id="titleFlag"> </Typography> {/* da gestire tramite flex box */}
            
           
-        <IconButton aria-label="app" onClick={this.theListener} style={{ marginLeft: '35%' }} id="iconButton">
+        <IconButton aria-label="app" onClick={this.showMenu} id={this.state.iconButton}>
           <Menu/>
         </IconButton> 
 
-        <IconButton aria-label="api" onClick={this.hideMenu} id="closeIcon">
+        <IconButton aria-label="app" onClick={this.hideMenu} id={this.state.closeIcon}>
          <CloseIcon/>
         </IconButton> 
 
