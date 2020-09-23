@@ -14,6 +14,7 @@ import Hidden from '@material-ui/core/Hidden';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth'*/
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton'; 
+import CloseIcon from '@material-ui/icons/Close';
 import Menu from '@material-ui/icons/Menu';
 import '../Header/header.css';
 import { render } from 'react-dom';
@@ -24,7 +25,7 @@ import { render } from 'react-dom';
 class Header extends React.Component {
 
   constructor(props) {
-    super(props);
+   super(props);
     this.state = {
     width: 0,
     height: 0
@@ -37,6 +38,7 @@ class Header extends React.Component {
   componentDidMount() {
     this.resizeListener();
     this.getScreen();
+    //this.hideMenu();
   }
 
   resizeListener = () => {
@@ -44,6 +46,21 @@ class Header extends React.Component {
     window.addEventListener('click', this.theListener);
     window.addEventListener('load', this.loadListener);
   }
+
+  hideMenu =() => {
+    window.addEventListener('click', this.closeListener);
+    
+  }
+   
+   closeListener = () => {
+
+      document.getElementById('flag').style.display = 'none'; 
+      document.getElementById('closeIcon').style.display = 'none';
+      document.getElementById('iconButton').style.display = 'block';
+      document.getElementById('titleFlag').innerHTML = 'Titolo';  
+    // this.getScreen();
+      console.log('close listener');
+      }
 
   theScreenListener = () => {
   
@@ -54,8 +71,8 @@ class Header extends React.Component {
 
     this.getScreen();
 
-    console.log('new width state:', this.state.width);
-    console.log('new height state:', this.state.height);
+    console.log('new width state :->', this.state.width);
+    console.log('new height state:->', this.state.height);
   }
   
   theListener = () => {
@@ -70,10 +87,10 @@ class Header extends React.Component {
      document.getElementById('titleFlag').innerHTML = '';
     document.getElementById('flag').style.display = 'block';
     document.getElementById('iconButton').style.display = 'none';
+    document.getElementById('closeIcon').style.display = 'block';
 
-    console.log('new width state:', this.state.width);
-    console.log('new height state:', this.state.height);
-
+    console.log('new width state:-->', this.state.width);
+    console.log('new height state:-->', this.state.height);
   }
 
   loadListener = () => {
@@ -85,23 +102,28 @@ class Header extends React.Component {
 
     this.getScreen();
 
-    console.log('new width state:', this.state.width);
-    console.log('new height state:', this.state.height);
+    console.log('new width state:--->', this.state.width);
+    console.log('new height state:--->', this.state.height);
   }
 
+
+
   getScreen = () => {
-    if(this.newWidth < 968 || this.newHeight < 700) {
-      console.log('schermo modalita mobile!');
+    if(this.newWidth < 1000 || this.newHeight < 722) {
+      console.log('schermo modalita mobile!'); //non serve.... ma farlo tramite css
       document.getElementById('flag').style.display = 'none';
       document.getElementById('iconButton').style.display = 'block';
+      document.getElementById('closeIcon').style.display = 'none';
       document.getElementById('titleFlag').innerHTML = 'Titolo';
-  } else if(this.newWidth >= 968 || this.newHeight >= 700) {
+  } else if(this.newWidth >= 1000 || this.newHeight >= 722) {
     console.log('schermo modalita desktop!');
     document.getElementById('flag').style.display = 'block';
     document.getElementById('iconButton').style.display = 'none';
+    document.getElementById('closeIcon').style.display = 'none';
     document.getElementById('titleFlag').innerHTML = '';
   }
 }
+
 
 render() {
   return (
@@ -154,8 +176,12 @@ render() {
           <Typography id="titleFlag" style={{ marginLeft: '45%'}}> </Typography>
            
           
-          <IconButton aria-label="app" onClick={this.theListener} style={{ marginLeft: '35%' }} id="iconButton">
+        <IconButton aria-label="app" onClick={this.theListener} style={{ marginLeft: '35%' }} id="iconButton">
           <Menu/>
+        </IconButton> 
+
+        <IconButton aria-label="api" onClick={this.hideMenu} id="closeIcon">
+         <CloseIcon/>
         </IconButton> 
 
         </Toolbar>
