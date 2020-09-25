@@ -45,7 +45,7 @@ const Header = () => {
               alt="Main logo"
             />{/*``*/}
           </div>
-         <Hidden >  
+          
         
           <HeaderLinkStyle id='initialMenuStyle' className = {active} >
 
@@ -53,11 +53,10 @@ const Header = () => {
             <p>Home</p>
           </HeaderLink>
           
-       
           <HeaderLink to="/product">
             <p>Product</p>
-          </HeaderLink>
-
+          </HeaderLink>  
+         
         
           <HeaderLink to="/about">
             <p>About</p>
@@ -79,8 +78,6 @@ const Header = () => {
           </HeaderLink>
 
           </HeaderLinkStyle>
-       
-          </Hidden>
           <Typography id="titleFlag"> </Typography> {/* da gestire tramite flex box */}
         
         <Hidden smUp>

@@ -1,7 +1,9 @@
 
-@media screen and (min-width: 959px) {
+@media screen and (min-width: 600px) {
+
  #initialMenuStyle {
   display: block;
+ 
   } 
 }
 
