@@ -78,13 +78,14 @@ const Header = () => {
           </HeaderLink>
 
           </HeaderLinkStyle>
-          <Typography id="titleFlag"> </Typography> {/* da gestire tramite flex box */}
+        <Typography className="titleFlag"> </Typography>    {/*da gestire tramite flex box */}
         
         <Hidden smUp>
           <IconButton aria-label="app" className="iconButton" onClick={menuStatus}>
             <Menu/>
           </IconButton> 
-       </Hidden> 
+       </Hidden>         
+
 
         </Toolbar>
 

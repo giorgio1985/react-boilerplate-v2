@@ -14,3 +14,10 @@
 .noActive {
   display: block;
 }
+
+@media screen and (max-width: 600px) {
+  .titleFlag{
+    display: block;
+    width: 100%;
+  }
+}
