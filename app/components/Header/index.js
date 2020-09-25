@@ -14,7 +14,7 @@ import {
   IconButton, 
   Typography 
 } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
+
 import Menu from '@material-ui/icons/Menu';
 import '../Header/header.css';
 
@@ -22,11 +22,11 @@ import '../Header/header.css';
 const Header = () => {
   
   const [isMenuOpen, setMenu] = useState(true);
-  const active = isMenuOpen ? 'headerMenu' : 'headerWrapMenu';
+  const active = isMenuOpen ? 'active' : 'noActive';  
 
   const menuStatus = () => {
     console.log('isMenuOpen: ', isMenuOpen);
-    console.log('active: ', active);
+    console.log('active: ', active); 
     setMenu(!isMenuOpen)
   }
 
@@ -43,17 +43,17 @@ const Header = () => {
               crossOrigin="anonymous"
               height="50px"
               alt="Main logo"
-            />
+            />{/*``*/}
           </div>
-        <Hidden >
-          <HeaderLinkStyle className={active}>
+         <Hidden >  
+        
+          <HeaderLinkStyle id='initialMenuStyle' className = {active} >
 
           <HeaderLink to="/">
             <p>Home</p>
           </HeaderLink>
           
        
-
           <HeaderLink to="/product">
             <p>Product</p>
           </HeaderLink>
@@ -77,10 +77,12 @@ const Header = () => {
           <HeaderLink to="/contact">
             <p>Contact</p>
           </HeaderLink>
-           
+
           </HeaderLinkStyle>
+       
+          </Hidden>
           <Typography id="titleFlag"> </Typography> {/* da gestire tramite flex box */}
-        </Hidden>
+        
         <Hidden smUp>
           <IconButton aria-label="app" className="iconButton" onClick={menuStatus}>
             <Menu/>

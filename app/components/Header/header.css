@@ -1,12 +1,14 @@
-@media screen and (max-height: 700) {
-  .headerWrapMenu .headerMenu {
-    display: block;
-  }
+
+@media screen and (min-width: 959px) {
+ #initialMenuStyle {
+  display: block;
+  } 
 }
 
-.headerMenu {
-    display: none;
-  }
-  .headerWrapMenu {
-    display: block;
-  }
+.active {
+  display: none;
+}
+
+.noActive {
+  display: block;
+}
