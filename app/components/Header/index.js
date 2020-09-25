@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React,  
+{ useState } 
+from 'react';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,74 +8,28 @@ import Toolbar from '@material-ui/core/Toolbar';
 import HeaderLink from './HeaderLink';
 import HeaderLinkStyle from '../../components/HeaderLinkStyle';
 import moustache from '../../images/moustache.png';
-/*
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Hidden from '@material-ui/core/Hidden';
-import withWidth, { isWidthUp } from '@material-ui/core/withWidth'*/
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton'; 
+
+import { 
+  Hidden, 
+  IconButton, 
+  Typography 
+} from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import Menu from '@material-ui/icons/Menu';
 import '../Header/header.css';
-import { render } from 'react-dom';
 
 
-class Header extends React.Component {
-
-  constructor(props) {
-   super(props);
-    this.state = {
-    isMenuOpen: true,
-    iconButton: 'iconButton',
-    closeIcon: 'closeIcon',
-    flag: '',
-    width: 0,
-    height: 0
-    
-    };
-  }
+const Header = () => {
   
-  componentDidMount() {
-  this.getInitialMenu();
+  const [isMenuOpen, setMenu] = useState(true);
+  const active = isMenuOpen ? 'headerMenu' : 'headerWrapMenu';
+
+  const menuStatus = () => {
+    console.log('isMenuOpen: ', isMenuOpen);
+    console.log('active: ', active);
+    setMenu(!isMenuOpen)
   }
 
-  getInitialMenu = () => {
-   console.log('initial width: ', window.screen.width);
-   console.log('inital height: ', window.screen.height);
-    if(window.screen.width > 750 && this.state.iconButton === 'iconButton') {
-   this.setState({ iconButton: 'removeIcon', closeIcon: 'closeIcon'});
-    console.log('iconButton:', this.state.iconButton);
-    console.log('closeIcon:', this.state.closeIcon);
-  }  
- else {
-    console.log('errore stato');
-      }
-  }
-
-  hideMenu = () =>{
-   console.log('hideMenu function');
-   if(this.state.isMenuOpen === true) {
-     console.log('is menu open?: ', this.state.isMenuOpen);
-     this.setState({isMenuOpen: false, flag: 'removeMenu', iconButton: 'addButton', closeIcon: 'removeIcon'});
-   } else if(this.state.isMenuOpen === false) {
-     console.log('is menu open? :', this.state.isMenuOpen);
-     console.log('iconButton? :', this.state.iconButton);
-     this.setState({isMenuOpen: true, flag: 'addMenu', iconButton: 'removeButton'})
-     
-   }
-  }
-
-  showMenu = () => {
-    console.log('show function', this.state.flag);
-    if(this.state.flag === 'removeMenu') {
-      this.setState({flag: 'addMenu', closeIcon: 'addIcon', iconButton: 'removeButton' });
-    }
-
-  }
-
-render() {
   return (
     <div>
       <AppBar
@@ -89,13 +45,15 @@ render() {
               alt="Main logo"
             />
           </div>
-          <HeaderLinkStyle id={this.state.flag}>
+        <Hidden >
+          <HeaderLinkStyle className={active}>
 
           <HeaderLink to="/">
             <p>Home</p>
           </HeaderLink>
           
-        
+       
+
           <HeaderLink to="/product">
             <p>Product</p>
           </HeaderLink>
@@ -119,18 +77,15 @@ render() {
           <HeaderLink to="/contact">
             <p>Contact</p>
           </HeaderLink>
-          
+           
           </HeaderLinkStyle>
           <Typography id="titleFlag"> </Typography> {/* da gestire tramite flex box */}
-           
-          
-        <IconButton aria-label="app" onClick={this.showMenu} id={this.state.iconButton}>
-          <Menu/>
-        </IconButton> 
-
-        <IconButton aria-label="app" onClick={this.hideMenu} id={this.state.closeIcon}>
-         <CloseIcon/>
-        </IconButton> 
+        </Hidden>
+        <Hidden smUp>
+          <IconButton aria-label="app" className="iconButton" onClick={menuStatus}>
+            <Menu/>
+          </IconButton> 
+       </Hidden> 
 
         </Toolbar>
 
@@ -140,9 +95,6 @@ render() {
 
     
   );
-}
-
-
 }
 
 export default Header;
