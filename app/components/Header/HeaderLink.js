@@ -18,8 +18,13 @@ export default styled(Link)`
     background: grey;
     color: white;
   }
-  @media screen and (max-width: 767px) {
-    padding-right: 0;
+  @media screen and (max-width: 600) {
+  z-index: 2;
+  }
+`;
+/*
+
+   padding-right: 0;
     padding-left: 0;
     font-size: 100%;
     width: 70%;
@@ -27,5 +32,5 @@ export default styled(Link)`
     text-align: center;
     border-right: none;
     display: flex-direction;
-  }
-`;
+
+*/

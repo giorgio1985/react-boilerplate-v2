@@ -1,23 +1,50 @@
+@media screen and (min-width: 600) {
 
-@media screen and (min-width: 600px) {
-
- #initialMenuStyle {
-  display: block;
+  #initialMenuStyle {
+   display: block;
+   } 
+ }
+ /*
+ .active {
+   display: block;
+ }
  
-  } 
-}
-
-.active {
-  display: none;
-}
-
-.noActive {
-  display: block;
-}
-
-@media screen and (max-width: 600px) {
-  .titleFlag{
-    display: block;
-    width: 100%;
+ .noActive {
+   display: none;
+ }
+ */
+ @media screen and (max-width: 600px) {
+   .titleFlag{
+     display: block;
+     width: 100%;
+   }
+ }
+ 
+ @media screen and (max-width: 600px) {
+ .dropList {
+   flex-direction: column;
+   display: inline-flex;
+   position: absolute;
+   background-color: #f9f9f9;
+   top: 100%;
+   width: 100%;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 2;
+ }
+ 
+ .dropDown {
+ position: static;
+ display: block;
+ flex-wrap: wrap;
+ }
+ 
+ .dropDownClose {
+   display: none;
+ 
+   }
+ p {
+   padding: 10px 12px;
+   margin:0;
   }
-}
+ }
+ 
