@@ -45,7 +45,6 @@ const Header = () => {
    position="sticky"
    style={{ background: 'white', color: 'black' }}
    >
-   {/**/}
    <div className="flex-container">
       
       <Toolbar>
@@ -58,7 +57,6 @@ const Header = () => {
                />{/*``*/}
          </div>
          <HeaderLinkStyle id='initialMenuStyle' className = {drop} >
-            <div className=''>
                <div className="dropList">
                   <HeaderLink to="/">
                      <p>Home</p>
@@ -79,11 +77,10 @@ const Header = () => {
                      <p>Contact</p>
                   </HeaderLink>
                </div>
-            </div>
          </HeaderLinkStyle>
          <Typography className="titleFlag"> </Typography>
          {/*da gestire tramite flex box */}
-         <Hidden smUp>
+         <Hidden mdUp>
             <IconButton aria-label="app" className="iconButton" onClick={menuStatus}>
                <Menu/>
             </IconButton>

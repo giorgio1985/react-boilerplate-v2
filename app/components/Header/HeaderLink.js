@@ -18,19 +18,8 @@ export default styled(Link)`
     background: grey;
     color: white;
   }
-  @media screen and (max-width: 600) {
+  @media screen and (max-width: 959) {
   z-index: 2;
   }
 `;
-/*
 
-   padding-right: 0;
-    padding-left: 0;
-    font-size: 100%;
-    width: 70%;
-    height:40px;
-    text-align: center;
-    border-right: none;
-    display: flex-direction;
-
-*/
