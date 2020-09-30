@@ -17,12 +17,21 @@
    flex-direction: column;
    display: inline-flex;
    position: absolute;
-   background-color: #f9f9f9;
+   background-color:rgb(245, 245, 245, 1);/* opacity ==  1  */
    top: 100%;
    margin: auto;
    width: 75%;
    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0);
    z-index: 2;
+   animation-name: dropDown; 
+   animation-duration: 2s;
+ }
+
+ @keyframes dropDown {
+
+  from {width: 0%; background-color: rgba(204, 209, 174, 0.15);}
+  to {width: 100%; background-color: rgba(245, 245, 245, 1);}  /* opacity scalare*/
+  
  }
  
  .dropDown {
@@ -33,8 +42,9 @@
  
  .dropDownClose {
    display: none;
+
+}
  
-   }
  p {
    padding: 10px 12px;
    margin:0;

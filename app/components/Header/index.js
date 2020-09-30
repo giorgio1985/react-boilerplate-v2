@@ -19,22 +19,15 @@ import Menu from '@material-ui/icons/Menu';
 import '../Header/header.css';
 
 
-const Header = () => {
-  
-  //const [isMenuOpen, setIsMenuOpen] = useState(true);   ---> superfluo !
-  //const active = isMenuOpen ? 'active' : 'noActive';  
+const Header = () => { 
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const drop = isDropDownOpen ? 'dropDown' : 'dropDownClose'; 
 
   const menuStatus = () => {
-    //console.log('isMenuOpen: ', isMenuOpen);
-   // console.log('active: ', active); 
 
     console.log('isDropDownOpen: ', isDropDownOpen);
     console.log('drop: ', drop); 
-
-    //setIsMenuOpen(!isMenuOpen);
     setIsDropDownOpen(!isDropDownOpen);
 
   }
@@ -86,7 +79,6 @@ const Header = () => {
             </IconButton>
          </Hidden>
       </Toolbar>
-      {/* */}
    </div>
    
    </AppBar>     
