@@ -31,6 +31,7 @@ import Container from '@material-ui/core/Container';
 import  Grid  from '@material-ui/core/Grid';
 import '../../components/Card/card.css';
 import mockCards from '../../components/Card/mock';
+//import  ModalDialog  from '../../components/ModalDialog';
 
 
 const key = 'home';
@@ -84,10 +85,10 @@ export function HomePage({
                 id={renderCard.id} 
                 commento={renderCard.commento }
                 link={renderCard.link}   
-                image = { require(`../../images/${renderCard.image}`) }  
+                image = { require(`../../images/${renderCard.image}`) } 
               />
-             
-            </Grid> 
+
+            </Grid>   
       )    })}
         </Grid>
           </div>
@@ -114,12 +115,6 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps() {
   return {
-    /*
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: evt => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
-      }, */
   };
 }
 

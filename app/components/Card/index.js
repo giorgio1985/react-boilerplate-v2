@@ -14,6 +14,7 @@ import mockCards from './mock';
 import CardMedia from '@material-ui/core/CardMedia';
 import './card.css';
 import Headerlink from '../Header/HeaderLink';
+import  ModalDialog  from '../ModalDialog';
 
 const useStyles = makeStyles({
   root: {
@@ -21,9 +22,21 @@ const useStyles = makeStyles({
   }
 });
 
+
+
 function Article(props) {
+
+
+
   const classes = useStyles();
   console.log('lunghezza array:', mockCards.length);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(!open);
+  };
+
+
 return(
  
 <Card className="box" variant="outlined">
@@ -43,9 +56,10 @@ return(
     </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">
-          <Headerlink to={`/card/${props.id}`}><u>Leggi di più</u></Headerlink>  
-         </Button>
+        <ModalDialog open={open}
+              id = {props.id}
+        commento = {props.commento}
+        />
       </CardActions>
     </Card>    
     )
