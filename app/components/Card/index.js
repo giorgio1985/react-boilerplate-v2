@@ -1,5 +1,5 @@
 /**
- *
+ * Components   index.js
  * Card
  *
  */
@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-//import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import mockCards from './mock';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -22,19 +22,27 @@ const useStyles = makeStyles({
   }
 });
 
-
-
 function Article(props) {
-
 
   const classes = useStyles();
   console.log('lunghezza array:', mockCards.length);
   const [open, setOpen] = React.useState(false);
 
- /* const handleClickOpen = () => {
-    setOpen(!open);
-  };*/
-
+ const handleClickOpen = () => {
+  setOpen(open);  
+     console.log('props:', props.id)
+     console.log('open:', open)
+    return (
+    <div >
+      <ModalDialog 
+      
+      Id = '1'
+      Commento = 'commento'
+    
+      />   
+      </div>
+    );
+  };
 
 return(
  
@@ -55,11 +63,12 @@ return(
     </Typography>
       </CardContent>
       <CardActions>
-        <ModalDialog open={open}
-              id = {props.id}
-        commento = {props.commento}
-        />
+   
+       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+       Leggi di più!
+      </Button>
       </CardActions>
+
     </Card>    
     )
 

@@ -1,3 +1,6 @@
+/*
+*Componets modalDialog index.js
+*/
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -55,22 +58,17 @@ function ModalDialog(props) {
 
 const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+ /* const handleClickOpen = () => {
     setOpen(true);
-  };
+  };*/
   const handleClose = () => {
-    setOpen(false);
+    setOpen(!open); 
   };
 
   return (
-
-
    <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-       Leggi di più
-      </Button>
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-        <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+      <Dialog  aria-labelledby="customized-dialog-title" open={open}>
+        <DialogTitle id="customized-dialog-title" >
           Id:  { props.id }
         </DialogTitle>
         <DialogContent dividers>

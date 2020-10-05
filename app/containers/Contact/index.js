@@ -1,5 +1,5 @@
 /**
- *
+ * container index.js
  * Contact
  *
  */
@@ -27,7 +27,7 @@ export function Contact() {    {/* Nome del componente  */}
 
   
   const ZoomIcon = () => {  {/* nome della funzione deputata alla view della dialog*/}
-  console.log('Coming Soon!')
+  console.log('ZommIcon function!')
     return (
     <div className="modalDialog">
          <ModalDialog
