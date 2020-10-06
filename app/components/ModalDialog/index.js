@@ -11,6 +11,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import '../ModalDialog/modalDialog.css';
 
 const styles = (theme) => ({
   root: {
@@ -56,18 +57,21 @@ const DialogActions = withStyles((theme) => ({
 
 function ModalDialog(props) {
 
-const [open, setOpen] = React.useState(false);
+  const [close, setClose] = React.useState(false);
+   const setStatus = close ? 'closeStatus' : 'openStatus';
+  
+  const closeDialog = () => {
+  console.log('setStatus', setStatus);
+  setClose(!close);
+   
+  }
 
- /* const handleClickOpen = () => {
-    setOpen(true);
-  };*/
-  const handleClose = () => {
-    setOpen(!open); 
-  };
+/* ` `  */
 
-  return (
-   <div>
-      <Dialog  aria-labelledby="customized-dialog-title" open={open}>
+ return (
+   
+   <div >
+       <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} className = {setStatus}  >
         <DialogTitle id="customized-dialog-title" >
           Id:  { props.id }
         </DialogTitle>
@@ -85,7 +89,7 @@ const [open, setOpen] = React.useState(false);
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button autoFocus  color="primary" onClick= { closeDialog } >
             Close
           </Button>
         </DialogActions>

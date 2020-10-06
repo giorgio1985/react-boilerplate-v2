@@ -29,19 +29,10 @@ function Article(props) {
   const [open, setOpen] = React.useState(false);
 
  const handleClickOpen = () => {
-  setOpen(open);  
+  setOpen(!open);  
      console.log('props:', props.id)
      console.log('open:', open)
-    return (
-    <div >
-      <ModalDialog 
-      
-      Id = '1'
-      Commento = 'commento'
-    
-      />   
-      </div>
-    );
+
   };
 
 return(
@@ -49,7 +40,7 @@ return(
 <Card className="box" variant="outlined">
   <CardContent>
     <Typography className={classes.root} color="textSecondary" gutterBottom>
-         { props.id } 
+       { props.id } 
     </Typography>
     
     <CardMedia 
@@ -58,7 +49,7 @@ return(
        image= { props.image }
        />
     <Typography variant="body2" component="p">
-        { props.commento }
+       { props.commento }
           <br />
     </Typography>
       </CardContent>
@@ -67,8 +58,13 @@ return(
        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
        Leggi di più!
       </Button>
+     
       </CardActions>
+      <ModalDialog toogleDialog = {open}
 
+      id = {props.id}
+      commento = {props.commento}      
+      />
     </Card>    
     )
 

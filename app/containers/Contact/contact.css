@@ -12,3 +12,11 @@ padding-top: 5%;
  right: 15px;
  cursor: pointer;
 }
+
+.openStatus {
+display: block;
+}
+
+.closeStatus {
+    display: none;
+}

@@ -25,15 +25,20 @@ export function Contact() {    {/* Nome del componente  */}
   useInjectReducer({ key: 'contact', reducer });
   useInjectSaga({ key: 'contact', saga });
 
+  const [open, setClose] = React.useState(true);
+  const setStatus = open ? 'closeStatus' : 'openStatus';
+
   
   const ZoomIcon = () => {  {/* nome della funzione deputata alla view della dialog*/}
-  console.log('ZommIcon function!')
+  setClose(!open);
+  console.log('setValue', setStatus)
     return (
-    <div className="modalDialog">
-         <ModalDialog
+    <div >
+         <ModalDialog className={setStatus}
          
          id = '1'
-         commento = 'commento 1'
+         commento = 'commento '
+        
          
          />
      </div>
@@ -47,7 +52,11 @@ export function Contact() {    {/* Nome del componente  */}
    <div className="googleMap">
       <img src={gmap}  alt="google map"  style={{width: '100%'}}/>  
     <div className="zoomMapIcon">
-      <ZoomIcon/>
+      
+      <ZoomOutMapIcon onClick = { ZoomIcon }
+      
+      />
+
    </div>
 </div>
 <div className="descriptionMap">
