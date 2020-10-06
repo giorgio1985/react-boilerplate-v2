@@ -13,7 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import mockCards from './mock';
 import CardMedia from '@material-ui/core/CardMedia';
 import './card.css';
-//import Headerlink from '../Header/HeaderLink';
 import  ModalDialog  from '../ModalDialog';
 
 const useStyles = makeStyles({

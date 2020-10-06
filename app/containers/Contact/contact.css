@@ -1,22 +1,26 @@
 
+/*
+*Container contact css
+*
+*/
 #itemMap {
-font-size: 20px;
-margin: 15px;
-padding-top: 5%;
-}
-
-.zoomMapIcon {
- float: right;
- position: relative;
- bottom: 30px;
- right: 15px;
- cursor: pointer;
-}
-
-.openStatus {
-display: block;
-}
-
-.closeStatus {
-    display: none;
-}
+    font-size: 20px;
+    margin: 15px;
+    padding-top: 5%;
+    }
+    
+    .zoomMapIcon {
+     float: right;
+     position: relative;
+     bottom: 30px;
+     right: 15px;
+     cursor: pointer;
+    }
+    
+    .Open {
+        display: block;
+    }
+    
+    .Close {
+        display: none;
+    }

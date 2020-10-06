@@ -66,7 +66,7 @@ function ModalDialog(props) {
    
   }
 
-/* ` `  */
+/* `` back tik di riserva  ..*/
 
  return (
    
@@ -101,6 +101,3 @@ function ModalDialog(props) {
 ModalDialog.propTypes = {};
 
 export default ModalDialog;
-
-
-

@@ -1,8 +1,13 @@
+/*
+*Components ModalDialog.css
+*
+*/
+
 .openStatus {
     display: block;
-}
-
-.closeStatus {
-    display: none;
+    }
     
-}
+
+ .closeStatus {
+        display: none;
+    }
