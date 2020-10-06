@@ -59,7 +59,7 @@ return(
       </Button>
      
       </CardActions>
-      <ModalDialog toogleDialog = {open}
+      <ModalDialog toogleDialog = {open} setButton = {handleClickOpen}
 
       id = {props.id}
       commento = {props.commento}      

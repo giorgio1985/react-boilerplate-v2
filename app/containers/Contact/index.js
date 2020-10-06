@@ -64,6 +64,7 @@ const DialogActions = withStyles((theme) => ({
     padding: theme.spacing(1),
   },
 }))(MuiDialogActions);
+
 export function Contact(props) {    {/* Nome del componente  */}
 
   useInjectReducer({ key: 'contact', reducer });
@@ -71,9 +72,7 @@ export function Contact(props) {    {/* Nome del componente  */}
 
   const [open, setOpen] = React.useState(false);
 
-
-  
-  const Foo = () => {  {/* nome della funzione deputata alla view della dialog*/}
+  const Foo = () => { 
   console.log('open', open);
   return setOpen(!open);
    }
@@ -87,7 +86,7 @@ export function Contact(props) {    {/* Nome del componente  */}
     
     <ZoomOutMapIcon onClick={Foo}/>
 
-    <ModalDialog toogleDialog = {open}
+    <ModalDialog toogleDialog = {open} setButton = {Foo}
             id = {props.id}
       commento= {props.commento}
       />
