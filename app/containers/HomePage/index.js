@@ -60,39 +60,36 @@ export function HomePage({
   };
 
   return (
-    <Container>
-      <div className="container">
+<Container>
+   <div className="container">
       <Helmet>
-        <title>Home Page</title>
-        <meta name="description" content="A React.js Boilerplate v2" />
+         <title>Home Page</title>
+         <meta name="description" content="A React.js Boilerplate v2" />
       </Helmet>
-        <H1>
-          <FormattedMessage {...messages.home} />
-        </H1>
-        <div>
-          <H3>
-             <FormattedMessage {...messages.underTitle} />
-          </H3>
-        </div> 
-        <Grid container >
-       
-          {mockCards.map(renderCard=>{ 
-          console.log('renderCard', renderCard);
-          return( 
-            
-            <Grid item xs={12} sm={4} key={renderCard.id}>
-              <Article 
-                id={renderCard.id} 
-                commento={renderCard.commento }
-                link={renderCard.link}   
-                image = { require(`../../images/${renderCard.image}`) } 
-              />
-
-            </Grid>   
-      )    })}
-        </Grid>
-          </div>
-      </Container>
+      <H1>
+         <FormattedMessage {...messages.home} />
+      </H1>
+      <div>
+         <H3>
+            <FormattedMessage {...messages.underTitle} />
+         </H3>
+      </div>
+      <Grid container >
+         {mockCards.map(renderCard=>{ 
+         console.log('renderCard', renderCard);
+         return( 
+         <Grid item xs={12} sm={4} key={renderCard.id}>
+            <Article 
+            id={renderCard.id} 
+            commento={renderCard.commento }
+            link={renderCard.link}   
+            image = { require(`../../images/${renderCard.image}`) } 
+            />
+         </Grid>
+         )    })}
+      </Grid>
+   </div>
+</Container>
     
   );
 }

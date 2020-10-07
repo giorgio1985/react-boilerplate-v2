@@ -73,23 +73,14 @@ function ModalDialog(props) {
    <div >
        <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} className = {setStatus}   onClose = { props.setButton }>
         <DialogTitle id="customized-dialog-title" onClose = { props.setButton }>
-           { props.id }
+          { props.id } 
         </DialogTitle>
         <DialogContent dividers>
+
           <Typography gutterBottom>
-          { props.commento }
+           { props.children }
           </Typography>
-          <Typography gutterBottom>
-            Praesent commodo cursus magna, vel scelerisque nisl 
-            consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus 
-            dolor auctor Praesent commodo cursus magna, 
-            vel scelerisque nisl consectetur et. Vivamus sagittis
-            lacus vel augue laoreet rutrum faucibus dolor auctor.
-          </Typography>
-          <Typography gutterBottom>
-           { props.src }
-          </Typography>
+
         </DialogContent>
         <DialogActions>
           <Button autoFocus  color="primary"  onClick = { props.setButton }>

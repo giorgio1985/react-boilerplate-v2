@@ -37,35 +37,31 @@ function Article(props) {
 return(
  
 <Card className="box" variant="outlined">
-  <CardContent>
-    <Typography className={classes.root} color="textSecondary" gutterBottom>
-       { props.id } 
-    </Typography>
-    
-    <CardMedia 
-       component="img"
-       height="200px" 
-       image= { props.image }
-       />
-    <Typography variant="body2" component="p">
-       { props.commento }
-          <br />
-    </Typography>
-      </CardContent>
-      <CardActions>
-   
-       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-       Leggi di più!
+   <CardContent>
+      <Typography className={classes.root} color="textSecondary" gutterBottom>
+         { props.id } 
+      </Typography>
+      <CardMedia 
+         component="img"
+         height="200px" 
+         image= { props.image }
+         />
+      <Typography variant="body2" component="p">
+         { props.commento }
+         <br />
+      </Typography>
+   </CardContent>
+   <CardActions>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      Leggi di più!
       </Button>
-     
-      </CardActions>
-      <ModalDialog toogleDialog = {open} setButton = {handleClickOpen}
-
-      id = {props.id}
-      commento = {props.commento}  
-  
-      />
-    </Card>    
+   </CardActions>
+   <ModalDialog toogleDialog = {open} setButton = {handleClickOpen} id='titolo'>
+      <Typography gutterBottom>
+         {props.commento}
+      </Typography>
+   </ModalDialog>
+</Card>
     )
 
 };
