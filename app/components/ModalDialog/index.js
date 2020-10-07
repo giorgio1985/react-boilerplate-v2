@@ -73,11 +73,11 @@ function ModalDialog(props) {
    <div >
        <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} className = {setStatus}   onClose = { props.setButton }>
         <DialogTitle id="customized-dialog-title" onClose = { props.setButton }>
-          Id:  { props.id }
+           { props.id }
         </DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-          Commento: { props.commento }
+          { props.commento }
           </Typography>
           <Typography gutterBottom>
             Praesent commodo cursus magna, vel scelerisque nisl 
@@ -86,6 +86,9 @@ function ModalDialog(props) {
             dolor auctor Praesent commodo cursus magna, 
             vel scelerisque nisl consectetur et. Vivamus sagittis
             lacus vel augue laoreet rutrum faucibus dolor auctor.
+          </Typography>
+          <Typography gutterBottom>
+           { props.src }
           </Typography>
         </DialogContent>
         <DialogActions>

@@ -62,7 +62,8 @@ return(
       <ModalDialog toogleDialog = {open} setButton = {handleClickOpen}
 
       id = {props.id}
-      commento = {props.commento}      
+      commento = {props.commento}  
+  
       />
     </Card>    
     )
