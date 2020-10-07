@@ -83,6 +83,7 @@ export function HomePage({
             id={renderCard.id} 
             commento={renderCard.commento }
             link={renderCard.link}   
+            descrizione = {renderCard.descrizione}
             image = { require(`../../images/${renderCard.image}`) } 
             />
          </Grid>

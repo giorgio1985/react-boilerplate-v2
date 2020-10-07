@@ -67,31 +67,25 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export function Contact() {    {/* Nome del componente  */}
+                            
   useInjectReducer({ key: 'contact', reducer });
   useInjectSaga({ key: 'contact', saga });
-
+  
   const [open, setOpen] = React.useState(false);
-
   const Foo = () => { 
   console.log('open', open);
   return setOpen(!open);
    }
 
-  return (
-
-
-   <div className="googleMap">
-      <img src={gmap}  alt="google map" style={{width: '100%'}}/>  
-    <div className="zoomMapIcon" >
-    
-    <ZoomOutMapIcon onClick={Foo}/>
-
-    <ModalDialog toogleDialog = {open} setButton = {Foo}  id = 'Contatti'>   
+return (
+<div className="googleMap">
+<img src={gmap}  alt="google map" style={{width: '100%'}}/>  
+<div className="zoomMapIcon" >
+   <ZoomOutMapIcon onClick={Foo}/>
+   <ModalDialog toogleDialog = {open} setButton = {Foo}  id = 'Contatti'>   
       <Iframe/>
-    </ModalDialog> 
-   
-
-</div>   
+   </ModalDialog>
+</div>
 
 <div className="descriptionMap">
    <div id="itemMap">

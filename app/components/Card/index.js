@@ -53,12 +53,22 @@ return(
    </CardContent>
    <CardActions>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-      Leggi di più!
+      Leggi di più
       </Button>
    </CardActions>
    <ModalDialog toogleDialog = {open} setButton = {handleClickOpen} id='titolo'>
       <Typography gutterBottom>
          {props.commento}
+      </Typography>
+      <br/>
+      <CardMedia
+        component="img"
+        height="200px" 
+        image = { props.image } 
+      />
+      <br/>
+      <Typography>
+        {props.descrizione}
       </Typography>
    </ModalDialog>
 </Card>

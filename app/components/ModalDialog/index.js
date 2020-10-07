@@ -60,18 +60,20 @@ function ModalDialog(props) {
   const [close, setClose] = React.useState(false);
    const setStatus = close ? 'closeStatus' : 'openStatus';
   
+ 
   const closeDialog = () => {
   console.log('setStatus', setStatus);
-  setClose(!close);
+    setClose(!close);
+
    
   }
 
-/* `` back tik di riserva  ..*/
+ /* `` back tik di riserva  ..*/
 
  return (
    
    <div >
-       <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} className = {setStatus}   onClose = { props.setButton }>
+       <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} onClose = { props.setButton } className = {setStatus}>
         <DialogTitle id="customized-dialog-title" onClose = { props.setButton }>
           { props.id } 
         </DialogTitle>
@@ -84,7 +86,7 @@ function ModalDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button autoFocus  color="primary"  onClick = { props.setButton }>
-            Close
+            Chiudi
           </Button>
         </DialogActions>
       </Dialog>
