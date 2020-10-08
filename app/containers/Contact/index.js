@@ -26,10 +26,13 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import Iframe from '../../components/Iframe';
 
+
 const styles = (theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
+   paper: { minWidth: "500px" },
+   
   },
   closeButton: {
     position: 'absolute',
@@ -38,6 +41,11 @@ const styles = (theme) => ({
     color: theme.palette.grey[500],
   },
 });
+
+
+ 
+
+
 
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
@@ -66,6 +74,8 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
+
+
 export function Contact() {    {/* Nome del componente  */}
                             
   useInjectReducer({ key: 'contact', reducer });
@@ -78,13 +88,15 @@ export function Contact() {    {/* Nome del componente  */}
    }
 
 return (
-<div className="googleMap">
+<div className="googleMap" >
 <img src={gmap}  alt="google map" style={{width: '100%'}}/>  
 <div className="zoomMapIcon" >
    <ZoomOutMapIcon onClick={Foo}/>
-   <ModalDialog toogleDialog = {open} setButton = {Foo}  id = 'Contatti'>   
-      <Iframe/>
+
+   <ModalDialog toogleDialog = {open} setButton = {Foo}  id = 'Contatti' >   
+      <Iframe />
    </ModalDialog>
+
 </div>
 
 <div className="descriptionMap">

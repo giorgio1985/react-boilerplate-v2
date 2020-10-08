@@ -64,16 +64,11 @@ function ModalDialog(props) {
   const closeDialog = () => {
   console.log('setStatus', setStatus);
     setClose(!close);
-
-   
   }
 
- /* `` back tik di riserva  ..*/
-
  return (
-   
    <div>
-       <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} onClose = { props.setButton } className = {setStatus}>
+       <Dialog aria-labelledby="customized-dialog-title" open={props.toogleDialog} onClose = { props.setButton } maxWidth = {'xl'}>
         <DialogTitle id="customized-dialog-title" onClose = { props.setButton }>
           { props.id } 
         </DialogTitle>

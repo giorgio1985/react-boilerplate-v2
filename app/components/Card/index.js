@@ -36,7 +36,7 @@ function Article(props) {
 
 return(
  
-<Card className="box" variant="outlined">
+<Card className="box" variant="outlined" >
    <CardContent>
       <Typography className={classes.root} color="textSecondary" gutterBottom>
          { props.id } 
