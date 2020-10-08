@@ -81,7 +81,8 @@ export function HomePage({
          <Grid item xs={12} sm={4} key={renderCard.id}>
             <Article 
             id={renderCard.id} 
-            commento={renderCard.commento }
+            titolo={renderCard.titolo}
+            commento={renderCard.commento}
             link={renderCard.link}   
             descrizione = {renderCard.descrizione}
             image = { require(`../../images/${renderCard.image}`) } 

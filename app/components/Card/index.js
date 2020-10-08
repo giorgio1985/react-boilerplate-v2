@@ -56,7 +56,7 @@ return(
       Leggi di più
       </Button>
    </CardActions>
-   <ModalDialog toogleDialog = {open} setButton = {handleClickOpen} id='titolo'>
+   <ModalDialog toogleDialog = {open} setButton = {handleClickOpen} id={props.titolo}>
       <Typography gutterBottom>
          {props.commento}
       </Typography>

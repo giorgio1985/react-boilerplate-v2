@@ -78,11 +78,7 @@ function ModalDialog(props) {
           { props.id } 
         </DialogTitle>
         <DialogContent dividers>
-
-          <Typography gutterBottom>
            { props.children }
-          </Typography>
-
         </DialogContent>
         <DialogActions>
           <Button autoFocus  color="primary" onClick = { props.setButton }>
