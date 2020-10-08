@@ -30,7 +30,7 @@ const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography variant="h4">{children}</Typography>
       {onClose ? (
         <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
           <CloseIcon />
@@ -72,7 +72,7 @@ function ModalDialog(props) {
 
  return (
    
-   <div >
+   <div>
        <Dialog  aria-labelledby="customized-dialog-title" open={props.toogleDialog} onClose = { props.setButton } className = {setStatus}>
         <DialogTitle id="customized-dialog-title" onClose = { props.setButton }>
           { props.id } 
@@ -85,7 +85,7 @@ function ModalDialog(props) {
 
         </DialogContent>
         <DialogActions>
-          <Button autoFocus  color="primary"  onClick = { props.setButton }>
+          <Button autoFocus  color="primary" onClick = { props.setButton }>
             Chiudi
           </Button>
         </DialogActions>
